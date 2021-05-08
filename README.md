@@ -1,6 +1,6 @@
 ### Library Binary File System ###
 
-**IMPORTANT NOTE: THIS PROGRAM WILL ONLY FUNCTION ON LINUX MACHINES DUE TO THE NATURE OF THE SYSTEM() CALLS. THIS PROJECT WAS MADE FOR THE SAKE OF DEVELOPING SKILLS USING C++ BINARY TREES, NOT FOR PORTABILITY**
+**IMPORTANT NOTE: THIS PROGRAM WILL ONLY FUNCTION ON LINUX MACHINES DUE TO THE NATURE OF THE SYSTEM() CALLS. THIS PROJECT WAS MADE FOR THE SAKE OF DEVELOPING SKILLS USING C++ BINARY FILES, NOT FOR PORTABILITY**
 
 Problem: Read input from a binary file of database entries and transactions, and create new entries/make edits accordingly.
 Goal: to be able to read in the input from transaction files and then send records that have been added/changed to the copyable (which will be deleted at the end of the program) while ignoring deleted records. Print errors to ERROR file accordingly
