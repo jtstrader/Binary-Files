@@ -1,4 +1,6 @@
-LIBRARY DATABASE PROJECT
+### Library Binary File System ###
+
+**IMPORTANT NOTE: THIS PROGRAM WILL ONLY FUNCTION ON LINUX MACHINES DUE TO THE NATURE OF THE SYSTEM() CALLS. THIS PROJECT WAS MADE FOR THE SAKE OF DEVELOPING SKILLS USING C++ BINARY TREES, NOT FOR PORTABILITY**
 
 Problem: Read input from a binary file of database entries and transactions, and create new entries/make edits accordingly.
 Goal: to be able to read in the input from transaction files and then send records that have been added/changed to the copyable (which will be deleted at the end of the program) while ignoring deleted records. Print errors to ERROR file accordingly
@@ -7,7 +9,7 @@ Input:
 Binary database file (library.out) and binary transaction file (transact.out).
 
 Both are organized as: ISBN|name|author|onhand|price|type
-However, transact.out also has an enumator TransactionType at the beginning of every set of data
+However, inputted transaction files also have an enumator TransactionType at the beginning of every set of data
 
 Output:
 3 files:
@@ -16,8 +18,8 @@ Output:
     - ERRORS - an error file (.txt format) that shows the user any errors that occurred while going through the transactions
 
 Algorithm:
-The program will read in all the data from library.out and will assign each byte offset for the data to a map with the ISBN as the key.
-After this, library.out will be closed and not opened again, as we do not want to edit the master file. The name of the master file will
+The program will read in all the data from a binary file and will assign each byte offset for the data to a map with the ISBN as the key.
+After this, the binary file will be closed and not opened again, as we do not want to edit the master file. The name of the master file will
 be used in a system() call to create a copy as a file "copy.out". Copy.out will be used to make edits, additions, and changes.
 
 Add: a record is added if it is not already present in the system (in copy.out). All transactions include valid ISBNs, so negatives do not need to be checked.
@@ -51,7 +53,7 @@ When creating output, the map is iterated through using a map<unsigned int, long
 is used to move through the copy.out file. The records in copy.out that are present in the map (valid records) are sent to the update file. Any changes that were made through
 ChangeOnhand and ChangePrice will be reflected in the map. After this process is done, copy.out will be deleted.
 
---Final Notes--
+### Final Notes ###
 
 At most two book records and one transaction record can be in RAM at a time. For adding and deleting, only one record is used. For changing onhand and value prices, two
 records are used: one from copy.out and one from the transaction record.
